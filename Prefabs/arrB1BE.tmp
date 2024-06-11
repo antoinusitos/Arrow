@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://xygkpfwko0l5"]
+
+[ext_resource type="Texture2D" uid="uid://btihe8cynjx61" path="res://brackeys_platformer_assets/sprites/platforms.png" id="1_7cpvy"]
+[ext_resource type="Script" path="res://Scripts/Arrow.gd" id="1_b2tkw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncise"]
+size = Vector2(16, 4)
+
+[node name="Arrow" type="RigidBody2D"]
+max_contacts_reported = 10
+contact_monitor = true
+script = ExtResource("1_b2tkw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ncise")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_7cpvy")
+region_enabled = true
+region_rect = Rect2(16, 0, 32, 9)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

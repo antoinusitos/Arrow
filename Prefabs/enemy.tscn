@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://dvd7qxs2g8sjb"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_5mank"]
+[ext_resource type="Texture2D" uid="uid://yil3eux4xspp" path="res://brackeys_platformer_assets/sprites/slime_green.png" id="1_atrro"]
+[ext_resource type="PackedScene" uid="uid://6byxnecpt8c" path="res://Prefabs/KillZone.tscn" id="2_ypilr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84dac"]
+size = Vector2(14, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbjjs"]
+atlas = ExtResource("1_atrro")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35ybb"]
+atlas = ExtResource("1_atrro")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nqe7"]
+atlas = ExtResource("1_atrro")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxaqi"]
+atlas = ExtResource("1_atrro")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i0opr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbjjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35ybb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nqe7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxaqi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlony"]
+size = Vector2(18, 12)
+
+[node name="Enemy" type="RigidBody2D"]
+script = ExtResource("1_5mank")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_84dac")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i0opr")
+autoplay = "default"
+frame_progress = 0.604177
+
+[node name="KillZone" parent="." instance=ExtResource("2_ypilr")]
+position = Vector2(0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_rlony")
+
+[node name="RightRayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 6)
+target_position = Vector2(9, 0)
+
+[node name="LeftRayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 6)
+target_position = Vector2(-9, 0)
