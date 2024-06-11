@@ -24,6 +24,11 @@ func increase_arrow():
 	arrows_in_stock_i += 1
 	ui_manager_o.update_arrow(arrows_in_stock_i)
 
+func can_get_arrow():
+	if arrows_in_stock_i < 2:
+		return true
+	return false
+
 func _ready():
 	# Godot loads the Resource when it reads this very line.
 	arrow_prefab_o = load("res://Prefabs/arrow.tscn")

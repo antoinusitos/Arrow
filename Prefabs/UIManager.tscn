@@ -28,6 +28,7 @@ texture = ExtResource("2_takj3")
 expand_mode = 1
 
 [node name="Heart2" type="TextureRect" parent="LifeControl"]
+layout_mode = 0
 offset_left = 50.0
 offset_right = 90.0
 offset_bottom = 40.0
@@ -35,6 +36,7 @@ texture = ExtResource("2_takj3")
 expand_mode = 1
 
 [node name="Heart3" type="TextureRect" parent="LifeControl"]
+layout_mode = 0
 offset_left = 95.0
 offset_right = 135.0
 offset_bottom = 40.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cnf1k80ulei8o"]
+[gd_scene load_steps=16 format=3 uid="uid://cnf1k80ulei8o"]
 
 [ext_resource type="PackedScene" uid="uid://ipu225dw5lv8" path="res://Prefabs/player.tscn" id="1_8m3fj"]
 [ext_resource type="Texture2D" uid="uid://c43k5pnpx8p11" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="2_pqbmb"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dvd7qxs2g8sjb" path="res://Prefabs/enemy.tscn" id="6_fx2ip"]
 [ext_resource type="PackedScene" uid="uid://byqnliucx82ct" path="res://Prefabs/UIManager.tscn" id="7_5guia"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="7_a6pvj"]
+[ext_resource type="PackedScene" uid="uid://g56v2eaeeimw" path="res://Prefabs/frog.tscn" id="8_gx3bs"]
+[ext_resource type="PackedScene" uid="uid://xygkpfwko0l5" path="res://Prefabs/arrow.tscn" id="9_q45wi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i5qo8"]
 texture = ExtResource("2_pqbmb")
@@ -396,7 +398,8 @@ texture = ExtResource("2_pqbmb")
 3:15/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_8gxg3"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_i5qo8")
 
 [sub_resource type="Animation" id="Animation_6tcsl"]
@@ -443,7 +446,7 @@ _data = {
 
 [node name="Player" parent="." instance=ExtResource("1_8m3fj")]
 z_index = 5
-position = Vector2(-1, -3)
+position = Vector2(435, -2)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 13)
@@ -479,6 +482,7 @@ instant_kill_b = true
 shape = SubResource("WorldBoundaryShape2D_nskmq")
 
 [node name="Enemy" parent="." instance=ExtResource("6_fx2ip")]
+visible = false
 position = Vector2(456, 36)
 
 [node name="GameManager" type="Node" parent="."]
@@ -489,3 +493,12 @@ script = ExtResource("7_a6pvj")
 
 [node name="UIManager" parent="CanvasLayer" instance=ExtResource("7_5guia")]
 unique_name_in_owner = true
+
+[node name="Frog" parent="." instance=ExtResource("8_gx3bs")]
+position = Vector2(462, 48)
+rotation = -0.012825
+
+[node name="Arrow" parent="." instance=ExtResource("9_q45wi")]
+position = Vector2(196, 49)
+rotation = 1.46686
+start_frozen_b = true
