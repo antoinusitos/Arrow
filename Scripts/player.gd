@@ -90,7 +90,7 @@ func _physics_process(delta):
 	
 	handle_shoot()
 
-func take_damage(instant_kill_b, sender):
+func take_damage(instant_kill_b, sender	):
 	if instant_kill_b:
 		reload_scene.call_deferred()
 		return

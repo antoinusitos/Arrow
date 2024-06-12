@@ -7,6 +7,8 @@ extends Control
 @onready var heart_2 = $LifeControl/Heart2
 @onready var heart_3 = $LifeControl/Heart3
 
+@onready var gold_text = $GoldControl/Panel/GoldText
+
 func update_arrow(arrows_i):
 	if arrows_i == 2:
 		arrow_1.show()
@@ -35,3 +37,6 @@ func update_life(life):
 		heart_1.hide()
 		heart_2.hide()
 		heart_3.hide()
+
+func update_gold(gold_i):
+	gold_text.text = str(gold_i)

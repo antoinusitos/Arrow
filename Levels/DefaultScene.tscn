@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cnf1k80ulei8o"]
+[gd_scene load_steps=17 format=3 uid="uid://cnf1k80ulei8o"]
 
 [ext_resource type="PackedScene" uid="uid://ipu225dw5lv8" path="res://Prefabs/player.tscn" id="1_8m3fj"]
 [ext_resource type="Texture2D" uid="uid://c43k5pnpx8p11" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="2_pqbmb"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="7_a6pvj"]
 [ext_resource type="PackedScene" uid="uid://g56v2eaeeimw" path="res://Prefabs/frog.tscn" id="8_gx3bs"]
 [ext_resource type="PackedScene" uid="uid://xygkpfwko0l5" path="res://Prefabs/arrow.tscn" id="9_q45wi"]
+[ext_resource type="PackedScene" uid="uid://d3tvatk4s5npj" path="res://Prefabs/bat.tscn" id="10_ldu8a"]
 [ext_resource type="PackedScene" uid="uid://8nxnsov4j32g" path="res://Prefabs/swordsman.tscn" id="10_scbe2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i5qo8"]
@@ -497,7 +498,9 @@ rotation = -0.012825
 [node name="Arrow" parent="." instance=ExtResource("9_q45wi")]
 position = Vector2(196, 49)
 rotation = 1.46686
-start_frozen_b = true
 
 [node name="Swordsman" parent="." instance=ExtResource("10_scbe2")]
 position = Vector2(626, 48)
+
+[node name="Bat" parent="." instance=ExtResource("10_ldu8a")]
+position = Vector2(235, -53)

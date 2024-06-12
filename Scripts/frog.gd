@@ -76,7 +76,6 @@ func _on_timer_attack_timeout():
 	timer_attack.stop()
 	timer_attack_end.start()
 	if player_to_damage_o:
-		print("send damage 2")
 		player_to_damage_o.take_damage(false, self)
 		player_to_damage_o = null
 
@@ -84,9 +83,7 @@ func _on_attack_area_2d_body_entered(body):
 	if life_i <= 0:
 		return
 	if body.has_method("player"):
-		print("attack")
 		if is_attacking_b:
-			print("send damage")
 			body.take_damage(false, self)
 		else:
 			player_to_damage_o = body

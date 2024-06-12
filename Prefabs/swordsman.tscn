@@ -352,6 +352,7 @@ shape = SubResource("RectangleShape2D_gxvrs")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -19)
 sprite_frames = SubResource("SpriteFrames_3vd0y")
+animation = &"hurt"
 autoplay = "default"
 
 [node name="KillZone" parent="." instance=ExtResource("6_l8omq")]
