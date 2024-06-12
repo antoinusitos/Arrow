@@ -27,7 +27,7 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.has_method("take_damage") && !is_frozen_b:
-		body.take_damage(false)
+		body.take_damage(false, self)
 		return
 	if body.has_method("increase_arrow") && body.can_get_arrow():
 		queue_free()

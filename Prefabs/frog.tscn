@@ -283,7 +283,7 @@ size = Vector2(16, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ymgn"]
 size = Vector2(12.5, 13.5)
 
-[node name="Frog" type="StaticBody2D"]
+[node name="Frog" type="StaticBody2D" groups=["frog"]]
 script = ExtResource("1_xua38")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
