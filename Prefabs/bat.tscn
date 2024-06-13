@@ -188,6 +188,7 @@ radius = 125.84
 
 [node name="Bat" type="StaticBody2D" groups=["frog"]]
 script = ExtResource("1_ptpse")
+life_i = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7.5)
